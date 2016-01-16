@@ -1,14 +1,16 @@
 
-var router = require('./router');
+var core = require('./core');
 
 function App() {
 
 }
 
 App.prototype.start = function () {
-  router.listen(8800, function () {
-    console.log("Server running on 8800\npaths :\n\r", router.paths.join("\n"));
+
+  core.router().listen(8800, function () {
+    console.log("Server running on 8800\npaths :\n\r", core.router().paths.join("\n"));
   });
+
 };
 
 module.exports = (function () {
